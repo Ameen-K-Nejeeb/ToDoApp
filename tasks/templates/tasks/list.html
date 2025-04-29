@@ -1,5 +1,5 @@
 
-    <h3>hello world this is todo app</h3>
+    <h3> todo app</h3>
 
     <form method="POST" action="">
         {% csrf_token %}
@@ -10,6 +10,7 @@
 
     {% for task in tasks %}
       <a href="{% url 'update_task' task.id %}">Update</a>
+      <a href="{% url 'delete' task.id %}">Delete</a>
       <h3>{{task}}</h3>
       
     {% endfor %}
