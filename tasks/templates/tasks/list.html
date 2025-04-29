@@ -1,0 +1,15 @@
+
+    <h3>hello world this is todo app</h3>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.title}}
+        
+        <input type="submit" name="Create Tasks">
+    </form>
+
+    {% for task in tasks %}
+      <a href="{% url 'update_task' task.id %}">Update</a>
+      <h3>{{task}}</h3>
+      
+    {% endfor %}
