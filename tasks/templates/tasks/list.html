@@ -1,16 +1,22 @@
+{% extends "main.html" %}
 
-    <h3> todo app</h3>
-
-    <form method="POST" action="">
+{% block container %}
+<div>
+  <form method="POST" action="">
         {% csrf_token %}
-        {{form.title}}
-        
+
+          {{form.title}}
+
         <input type="submit" name="Create Tasks">
     </form>
 
+</div>
+    
     {% for task in tasks %}
       <a href="{% url 'update_task' task.id %}">Update</a>
       <a href="{% url 'delete' task.id %}">Delete</a>
       <h3>{{task}}</h3>
       
     {% endfor %}
+{% endblock container %}
+
